@@ -1,5 +1,5 @@
 const APP = {
-  ver: "2.0.0",
+  ver: "1.7.0",
   user: {
     id: 0
   },
@@ -283,7 +283,7 @@ class UI {
     document.getElementById("autoCheck").onchange = event => {
       APP.cfg.auto = event.target.checked;
       document.getElementById("speedControlContainer").style.display = APP.cfg.auto ? "flex" : "none";
-      sendToast(APP.cfg.auto ? "✅ Auto Complete" : "❌ Auto Complete", 2000);
+      sendToast(APP.cfg.auto ? "✅ Auto Complete" : "❌ Auto Complete", 1000);
     };
     
     // Configurar o slider de velocidade
@@ -312,7 +312,7 @@ class UI {
     
     document.getElementById("spoofCheck").onchange = event => {
       APP.cfg.questionSpoof = event.target.checked;
-      sendToast(APP.cfg.questionSpoof ? "✅ Question Spoof" : "❌ Question Spoof", 2000);
+      sendToast(APP.cfg.questionSpoof ? "✅ Question Spoof" : "❌ Question Spoof", 1000);
     };
     
     document.getElementById("darkModeCheck").onchange = event => {
@@ -320,14 +320,14 @@ class UI {
       if (typeof DarkReader !== 'undefined') {
         if (APP.cfg.darkMode) {
           DarkReader.enable();
-          sendToast("🌑", 2000);
+          sendToast("🌑", 1000);
         } else {
           DarkReader.disable();
-          sendToast("☀️", 2000);
+          sendToast("☀️", 1000);
         }
       } else {
         console.error("DarkReader não está disponível");
-        sendToast("⚠️ Dark Mode não disponível. Recarregue a página.", 3000);
+        sendToast("⚠️ Dark Mode não disponível. Recarregue a página.", 5000);
       }
     };
     
@@ -419,7 +419,7 @@ class Core {
             };
             
             _0x3cbec8.data.assessmentItem.item.itemData = JSON.stringify(_0x3ca1c5);
-            sendToast("🔓 BYPASSED", 1000);
+            sendToast("🔓 BYPASSED", 1500);
             
             const _0x1aa163 = {
               status: _0x238f50.status,
@@ -446,7 +446,7 @@ class Core {
       if (element) {
         element.click();
         if (element.textContent === "Mostrar resumo") {
-          sendToast("🎉 COMPLETO!", 3000);
+          sendToast("🎉 COMPLETO!", 1000);
           playAudio("https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/4x5g14gj.wav");
         }
       }
@@ -485,11 +485,11 @@ async function initApp() {
     await Core.loadExternalLibraries();
     UI.init();
     Core.init();
-    console.log(`KhanDestroyer v${APP.ver} iniciado com sucesso!`);
-    sendToast(`🚀 KhanDestroyer v${APP.ver} iniciado!`, 3000);
+    console.log(`BanzaiDestroyer v${APP.ver} iniciado com sucesso!`);
+    sendToast(`🚀 BanzaiDestroyer v${APP.ver} iniciado!`, 1000);
   } catch (error) {
-    console.error("Erro ao inicializar KhanDestroyer:", error);
-    sendToast("⚠️ Erro ao inicializar KhanDestroyer", 5000);
+    console.error("Erro ao inicializar BanzaiDestroyer:", error);
+    sendToast("⚠️ Erro ao inicializar BanzaiDestroyer, atualize a página.", 3000);
   }
 }
 
